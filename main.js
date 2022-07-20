@@ -3,13 +3,13 @@ let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
 snake[0] = {
-  x: 8 * box,
-  y: 8 * box
+  X: 8 * box,
+  Y: 8 * box
 }
 let direction = "right";
 let food = {
-  x: Math.floor(Math.random() * 15 + 1) * box,
-  y: Math.floor(Math.random() * 15 + 1) * box
+  X: Math.floor(Math.random() * 15 + 1) * box,
+  Y: Math.floor(Math.random() * 15 + 1) * box
 }
 
 function criarBG() {
@@ -20,13 +20,13 @@ function criarBG() {
 function criarCobrinha() {
   for(i=0; i < snake.length; i++) {
     context.fillStyle = "green";
-    context.fillRect(snake[i].x, snake[i].y, box, box);
+    context.fillRect(snake[i].X, snake[i].Y, box, box);
   }
 }
 
 function drawFood(){
   context.fillStyle = "red";
-  context.fillRect(food.x, food.y, box, box);
+  context.fillRect(food.X, food.Y, box, box);
 }
 
 document.addEventListener('keydown', update);
@@ -40,13 +40,13 @@ function update (event) {
 
 function iniciarJogo(){
   
-  if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
-  if(snake[0].x < 0 && direction == "left") snake[0].x = 16 * box;
-  if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
-  if(snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
+  if(snake[0].X > 15 * box && direction == "right") snake[0].X = 0;
+  if(snake[0].X < 0 && direction == "left") snake[0].X = 16 * box;
+  if(snake[0].Y > 15 * box && direction == "down") snake[0].Y = 0;
+  if(snake[0].Y < 0 && direction == "up") snake[0].Y = 16 * box;
   
   for(i = 1; i < snake.length; i++){
-    if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+    if(snake[0].X == snake[i].X && snake[0].Y == snake[i].Y){
       clearInterval(jogo);
       alert('Game Over 👾');
     }
@@ -56,24 +56,24 @@ function iniciarJogo(){
  criarCobrinha();
  drawFood();
  
- let snakeX = snake[0].x;
- let snakeY = snake[0].y;
+ let snakeX = snake[0].X;
+ let snakeY = snake[0].Y;
  
  if(direction == "right") snakeX += box;
  if(direction == "left") snakeX -= box;
  if(direction == "up") snakeY -= box;
  if(direction == "down") snakeY += box;
  
- if(snakeX != food.x || snakeY != food.y){
+ if(snakeX != food.X || snakeY != food.Y){
     snake.pop();
  }else{
-  food.x = Math.floor(Math.random() * 15 + 1) * box;
-  food.y = Math.floor(Math.random() * 15 + 1) * box;
+  food.X = Math.floor(Math.random() * 15 + 1) * box;
+  food.Y = Math.floor(Math.random() * 15 + 1) * box;
  }
  
  let newHead = {
-   x: snakeX,
-   y: snakeY
+   X: snakeX,
+   Y: snakeY
  }
  
  snake.unShift(newHead);
