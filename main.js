@@ -40,15 +40,37 @@ function update (event) {
 
 function iniciarJogo(){
   
-  if(snake[0].X > 15 * box && direction == "right") snake[0].X = 0;
-  if(snake[0].X < 0 && direction == "left") snake[0].X = 16 * box;
-  if(snake[0].Y > 15 * box && direction == "down") snake[0].Y = 0;
-  if(snake[0].Y < 0 && direction == "up") snake[0].Y = 16 * box;
+  if(snake[0].X > 15 * box && direction == "right") {
+    clearInterval(jogo);
+    alert('Game Over 👾');
+    location.reload();
+    return;
+  }
+  if(snake[0].X < 0 && direction == "left") {
+    clearInterval(jogo);
+    alert('Game Over 👾');
+    location.reload();
+    return;
+  }
+  if(snake[0].Y > 15 * box && direction == "down") {
+    clearInterval(jogo);
+    alert('Game Over 👾');
+    location.reload();
+    return;
+  }
+  if(snake[0].Y < 0 && direction == "up") {
+    clearInterval(jogo);
+    alert('Game Over 👾');
+    location.reload();
+    return;
+  }
   
   for(i = 1; i < snake.length; i++){
     if(snake[0].X == snake[i].X && snake[0].Y == snake[i].Y){
       clearInterval(jogo);
       alert('Game Over 👾');
+      location.reload();
+      return;
     }
   }
   
@@ -76,7 +98,7 @@ function iniciarJogo(){
    Y: snakeY
  }
  
- snake.unShift(newHead);
+ snake.unshift(newHead);
  
 }
 

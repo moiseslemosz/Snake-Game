@@ -10,4 +10,15 @@ body {
 
 #snake {
   border: 5px solid black;
+  margin-top: 30px;
+}
+
+footer {
+  color: black;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
 }
