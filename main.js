@@ -103,3 +103,27 @@ function iniciarJogo(){
 }
 
 let jogo = setInterval(iniciarJogo, 100);
+
+//Este código é um exemplo de um jogo simples de cobra (snake) implementado em JavaScript usando HTML5 Canvas para renderização gráfica.
+
+//Aqui está uma explicação do código:
+
+//São definidas variáveis para o canvas, contexto de renderização 2D, tamanho da célula (box), array que armazena as posições dos segmentos da cobra (snake), e a direção inicial da cobra.
+
+//É criado um objeto food que armazena a posição da comida, gerada aleatoriamente dentro do canvas.
+
+//São definidas três funções responsáveis por desenhar o plano de fundo, os segmentos da cobra e a comida no canvas.
+
+//É adicionado um event listener para capturar eventos de teclas pressionadas pelo usuário, que são usados para atualizar a direção da cobra.
+
+//É definida uma função iniciarJogo que é executada a cada intervalo de tempo (100ms) usando a função setInterval. Essa função verifica se a cobra colidiu com as bordas do canvas ou consigo mesma, atualiza a posição da cobra e da comida, e redesenha o canvas com as novas posições.
+
+//Dentro da função iniciarJogo, são verificadas as colisões da cobra com as bordas do canvas e consigo mesma usando condicionais if. Se ocorrer uma colisão, o jogo é encerrado exibindo uma mensagem de "Game Over" e a página é recarregada.
+
+//É chamada a função criarBG() para desenhar o plano de fundo, a função criarCobrinha() para desenhar os segmentos da cobra, e a função drawFood() para desenhar a comida no canvas.
+
+//É atualizada a posição da cabeça da cobra com base na direção atual, e é verificado se a cobra comeu a comida. Se a cobra comeu a comida, a posição da comida é atualizada aleatoriamente e um novo segmento é adicionado à cabeça da cobra. Se a cobra não comeu a comida, o último segmento da cauda da cobra é removido.
+
+//A função iniciarJogo é chamada a cada intervalo de tempo para atualizar o jogo em tempo real.
+
+//Essa é uma implementação básica de um jogo de cobra em JavaScript usando Canvas, e pode ser expandida e aprimorada para adicionar mais recursos e funcionalidades ao jogo.
